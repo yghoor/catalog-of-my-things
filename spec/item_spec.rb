@@ -42,3 +42,22 @@ describe Item do
     end
   end
 end
+
+describe 'Many-to-one relationship with Label class' do
+  context 'when a Label is set in an Item' do
+    before :each do
+      @label = Label.new('title', 'color')
+      @item = Item.new('15/12/2001')
+      @item.label = @label
+    end
+
+    it 'the item\'s label attribute is set to the label' do
+      expect(@item.label).to eq(@label)
+    end
+
+    it 'item is added to the label\'s items array' do
+      @item.label = @label
+      expect(@label.items).to include(@item)
+    end
+  end
+end
