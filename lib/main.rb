@@ -1,3 +1,5 @@
+#!../../../../../bin/env ruby
+
 # rubocop:disable Metrics/MethodLength
 
 require_relative './app'
