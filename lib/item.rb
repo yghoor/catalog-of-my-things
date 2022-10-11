@@ -2,7 +2,7 @@ class Item
   attr_reader :publish_date, :label, :source, :author, :genre
 
   def initialize(publish_date, label: nil, source: nil, author: nil, genre: nil)
-    @id = @id = Random.rand(1..10_000)
+    @id = Random.rand(1..10_000)
     @publish_date = publish_date
     @label = label
     @source = source
