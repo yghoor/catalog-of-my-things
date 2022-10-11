@@ -1,6 +1,10 @@
 # rubocop:disable Metrics/MethodLength
 
+require_relative './app'
+
 def main
+  app = App.new
+
   response = nil
 
   puts "Welcome to Catalougue Of My Things App!\n\n"
@@ -16,16 +20,13 @@ def main
 
     case response
     when '1'
-      puts 'List of all books:'
-      puts '------------------'
+      app.display_books
     when '2'
-      puts 'List of all labels:'
-      puts '-------------------'
+      app.display_labels
     when '3'
-      puts 'Add a book:'
-      puts '-----------'
+      app.add_book
     when '4'
-      puts 'Thanks you for using this app'
+      puts 'Thank you for using this app'
     end
 
     puts "\n"
