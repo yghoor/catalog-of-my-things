@@ -42,4 +42,9 @@ class App
     book = Book.new(publisher, cover_state, publish_date, label: label)
     @books << book
   end
+
+  def save_data
+    File.write('../config/enviroments/books.json', JSON.generate(Marshal.dump(@books))) unless @books.empty?
+    File.write('../config/enviroments/labels.json', JSON.generate(Marshal.dump(@labels))) unless @labels.empty?
+  end
 end
