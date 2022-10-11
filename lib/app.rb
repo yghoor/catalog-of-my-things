@@ -30,10 +30,10 @@ class App
     puts 'Enter the publish date of the book [DD/MM/YYYY]:'
     publish_date = gets.chomp
 
-    puts 'Enter the title of the book:'
+    puts 'Enter a label of the book:'
     title = gets.chomp
 
-    puts 'Enter the color of the book:'
+    puts 'Enter a color for label:'
     color = gets.chomp
 
     label = Label.new(title, color)
