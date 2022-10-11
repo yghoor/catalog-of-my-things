@@ -6,8 +6,21 @@ require_relative './label'
 
 class App
   def initialize
-    @books = []
-    @labels = []
+    # rubocop:disable Security/MarshalLoad
+    @books =
+      if File.size('../config/enviroments/books.json').zero?
+        []
+      else
+        Marshal.load(JSON.parse(File.read('../config/enviroments/books.json')))
+      end
+
+    @labels =
+      if File.size('../config/enviroments/labels.json').zero?
+        []
+      else
+        Marshal.load(JSON.parse(File.read('../config/enviroments/labels.json')))
+      end
+    # rubocop:enable Security/MarshalLoad
   end
 
   def display_books
