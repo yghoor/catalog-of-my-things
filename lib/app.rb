@@ -14,4 +14,10 @@ class App
     @books.each { |book| puts "#{book.label.title}, published in #{book.publish_date}" }
   end
 
+  def display_labels
+    puts 'List of all labels:'
+    puts '-------------------'
+    @labels.each { |label| puts "Title: #{label.title}, Color: #{label.color}" }
+  end
+
 end
