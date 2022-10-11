@@ -1,7 +1,6 @@
 #!../../../../../bin/env ruby
 
 # rubocop:disable Metrics/MethodLength
-
 require_relative './app'
 
 def main
@@ -28,6 +27,7 @@ def main
     when '3'
       app.add_book
     when '4'
+      app.save_data
       puts 'Thank you for using this app'
     end
 
