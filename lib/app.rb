@@ -8,4 +8,10 @@ class App
     @labels = []
   end
 
+  def display_books
+    puts 'List of all books:'
+    puts '------------------'
+    @books.each { |book| puts "#{book.label.title}, published in #{book.publish_date}" }
+  end
+
 end
